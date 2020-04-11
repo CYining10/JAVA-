@@ -1,0 +1,79 @@
+package step1.question;
+
+class Cat {
+	private String name;
+	
+	//***********Begin************
+	//请在此处定义含一个参数的构造函数
+	public Cat(String name) {
+		this.name=name;
+		}	
+	//************End*************
+	void printInfo() {
+		System.out.println("大家好，我是" + name);
+	}
+	
+	void mew() {
+		System.out.println(name + "：喵喵喵");
+	}
+	
+	void eat(String food) {
+		System.out.println(name + "在吃" + food);
+	}
+	
+	//***********Begin************
+	//增加一个方法void catchMouse(Mouse m)
+	//输出三句话：（参考任务描述）
+	void catchMouse(Mouse m) {
+		System.out.println(name + "抓住了" + m.name);
+		mew();
+		m.squeak();
+	}	
+	//************End*************
+
+}
+
+class Mouse{
+	String name;
+	
+	//***********Begin************
+	//请在此处定义含一个参数的构造函数
+	public Mouse(String name) {
+		this.name=name;
+	}
+	//************End*************
+
+	
+	void printInfo(){
+		System.out.println("大家好，我是" + name);
+	}
+	
+	void squeak() {
+		System.out.println(name + "：吱吱吱");
+	}
+	
+	void stealFood() {
+		System.out.println(name + "偷吃鱼啦");
+	}
+}
+
+public class CatCatchMouse {
+	public static void main(String[] args) {
+		//***********Begin************
+		// 按照下述要求补充代码
+		// 创建一个Cat对象，名字是Tom
+		// 输出猫的个人信息
+		Cat cat=new Cat("Tom");
+		cat.printInfo();	
+		// 创建一个Mouse对象，名字是Jerry
+		// 输出老鼠的个人信息
+		Mouse mouse=new Mouse("Jerry");
+		mouse.printInfo();
+		// 调用Mouse的stealFood方法
+		mouse.stealFood();
+		// 调用Cat的catchMouse(Mouse); 
+		cat.catchMouse(mouse);
+		//************End*************
+	}
+}
+
